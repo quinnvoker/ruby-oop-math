@@ -24,7 +24,6 @@ class Game
     correct = question.is_answer?(answer)
     players[0].damage if !correct
 
-    sleep 0.5
     show_response(players[0], correct)
   end
 
@@ -44,6 +43,13 @@ class Game
     @player_1.dead? || @player_2.dead?
   end
 
+  def end_game(winner)
+    puts "#{winner.name} wins with a score of #{winner.stat_string}"
+    puts "----- GAME OVER -----"
+    sleep 1
+    puts "Good bye!"
+  end
+
   def play
     while !game_over?
       ask_question()
@@ -53,7 +59,7 @@ class Game
       sleep 1
     end
 
-    puts "Game over"
+    end_game(players[0])
   end
 
 end
