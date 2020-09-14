@@ -37,4 +37,18 @@ class Game
     puts "P1: #{@player_1.stat_string} vs P2: #{@player_2.stat_string}"
   end
 
+  def game_over?
+    @player_1.dead? || @player_2.dead?
+  end
+
+  def play
+    while !game_over?
+      ask_question()
+      show_stats()
+      @players.rotate!
+    end
+
+    puts "Game over"
+  end
+
 end
