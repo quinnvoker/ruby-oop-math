@@ -33,4 +33,8 @@ class Game
     end
   end
 
+  def show_stats
+    puts "P1: #{@player_1.stat_string} vs P2: #{@player_2.stat_string}"
+  end
+
 end
