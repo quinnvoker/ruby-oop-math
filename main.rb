@@ -1,5 +1,15 @@
 require "./question"
+require "./player"
 
-q = Question.new
+p = Player.new("Player", 3)
 
-puts q
+puts p.stat_string
+p.damage
+puts p.stat_string
+puts "dead? " + p.dead?.inspect
+p.damage
+puts p.stat_string
+puts "dead? " + p.dead?.inspect
+p.damage
+puts p.stat_string
+puts "dead? " + p.dead?.inspect

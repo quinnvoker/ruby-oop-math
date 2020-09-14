@@ -38,8 +38,8 @@ The Player class will represent a player of the game. Each player instance will 
   * decrement @life by 1
 * dead?
   * returns @life < 0
-* stats()
-  * returns string in the format "#{name}: #{life}/#{max_life}"
+* stat_string
+  * returns string in the format "#{life}/#{max_life}"
 
 ## Question
 
