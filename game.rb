@@ -8,9 +8,13 @@ class Game
     @player_1 = Player.new("Player 1", 3)
     @player_2 = Player.new("Player 2", 3)
     @players = [@player_1, @player_2]
+    @turn_count = 0
   end
 
   def ask_question
+    @turn_count += 1
+    puts "----- NEW TURN -----" if @turn_count > 1
+
     question = Question.new
     puts "#{players[0].name}: #{question}"
 
@@ -18,10 +22,9 @@ class Game
     answer = gets.chomp.to_i
 
     correct = question.is_answer?(answer)
-    if !correct
-      players[0].damage
-    end
+    players[0].damage if !correct
 
+    sleep 0.5
     show_response(players[0], correct)
   end
 
@@ -46,6 +49,8 @@ class Game
       ask_question()
       show_stats()
       @players.rotate!
+
+      sleep 1
     end
 
     puts "Game over"
