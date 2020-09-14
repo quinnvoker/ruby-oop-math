@@ -1,15 +1,4 @@
-require "./question"
-require "./player"
+require './game'
 
-p = Player.new("Player", 3)
-
-puts p.stat_string
-p.damage
-puts p.stat_string
-puts "dead? " + p.dead?.inspect
-p.damage
-puts p.stat_string
-puts "dead? " + p.dead?.inspect
-p.damage
-puts p.stat_string
-puts "dead? " + p.dead?.inspect
+game = Game.new
+puts game.inspect
